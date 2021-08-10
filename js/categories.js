@@ -6,22 +6,22 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-function sortCategories(criteria, array){
-    let result = [];
+function sortCategories(criteria, array){ // Diferentes filtros. 
+    let result = []; // lista
     if (criteria === ORDER_ASC_BY_NAME)
-    {
-        result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+    { 
+        result = array.sort(function(a, b) { // orden por nombre a - z
+            if ( a.name < b.name ){ return -1; } // si a es menor me lo devuelve alreves
+            if ( a.name > b.name ){ return 1; } // si a es mayor lo devuelve bien. Con el return -1 ordena de atras para adelante, y viceversa con 1.
             return 0;
         });
-    }else if (criteria === ORDER_DESC_BY_NAME){
+    }else if (criteria === ORDER_DESC_BY_NAME){ // orden por nombre z - a
         result = array.sort(function(a, b) {
             if ( a.name > b.name ){ return -1; }
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_COUNT){
+    }else if (criteria === ORDER_BY_PROD_COUNT){ // orden por ventas de cant de productos
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.productCount);
             let bCount = parseInt(b.productCount);
@@ -38,17 +38,17 @@ function sortCategories(criteria, array){
 function showCategoriesList(){
 
     let htmlContentToAppend = "";
-    for(let i = 0; i < currentCategoriesArray.length; i++){
-        let category = currentCategoriesArray[i];
+    for(let i = 0; i < currentCategoriesArray.length; i++){ // recorre por indice, recorre el currentCat... que es una lista vacia y esta definida como una variable global.
+        let category = currentCategoriesArray[i]; // carga lo que venga del for y lo guarda en la variable category. 
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
+        if (((minCount == undefined /* esto si no esta ingresado el valor del minimo, no hace nada.*/) || (minCount != undefined && parseInt(category.productCount) >= minCount)) && //Estos son los filtros, el rango de cant de productos que tiene cada product. 
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){ // lo que hace el min y el max es poner en filtros el rango de cantidad de productos que se quiera, parseInt es para pasar a entero.
 
-            htmlContentToAppend += `
+            htmlContentToAppend += ` 
             <a href="category-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
+                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail"> 
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">

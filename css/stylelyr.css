@@ -1,0 +1,93 @@
+body {
+    /* background-image: url(perfectlogin.jpg); */
+    background-color: gainsboro;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor { /* div del usuario y la contraseña*/
+    width: 100%;
+    padding: 15px;
+}
+
+h1 { /*titulo*/
+    color: black;
+    font-size: 40px;
+    text-align: left;
+    text-shadow: black;
+    text-align: center;
+    border-radius: 10px;
+}
+
+input[type="text"], /*estilo del usuario y la contraseña*/ 
+input[type="password"] {
+    font-size: 18px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor { /*borde y estilo del usuario y la contraseña*/
+    margin-bottom: 15px;
+    border: 0.5px solid #aaa;
+    border: none;
+} 
+.input-contenedor2 { /*borde y estilo del usuario y la contraseña*/
+    margin-bottom: 15px;
+    border: 0.5px solid #aaa;
+    border: none;
+} 
+
+.icon { /* estilo de los iconos.*/
+    min-width: 40px;
+    color: black;
+}
+
+.button { /*estilo de lo que esta en el ingresar*/ 
+    border: none;
+    width: 50%;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer; 
+    transition: 0.3s;
+    margin-left: 30px;
+}
+
+.button:hover {
+    background-color: greenyellow;
+}
+
+p { /* texto de abajo del login*/
+    text-align: center;
+} 
+
+.link { /* completa con el de abajo*/
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: 0.2s;
+    color: blue;
+}
+
+.link:hover { /* le da junto con el de arriba el colorcito al registrar usuario*/
+    color: yellowgreen;
+} 
+
+@media(min-width:368px) /* le da el tamaño al formulario*/
+{
+    .formulario {
+        margin: auto;
+        width: 35%;
+        margin-top: 10%;
+        border-radius: 10px;
+        box-shadow: 0px;
+        text-align: center;
+    }
+}
