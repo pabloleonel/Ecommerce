@@ -1,7 +1,11 @@
+@font-face {
+    font-family: Raleway;
+    src: url(../webfonts/static/Raleway-Medium.ttf);
+}
 body {
     /* background-image: url(perfectlogin.jpg); */
     background-color: gainsboro;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Raleway-Medium; 
     margin: 0;
 }
 
@@ -23,7 +27,7 @@ h1 { /*titulo*/
     border-radius: 10px;
 }
 
-input[type="text"], /*estilo del usuario y la contraseña*/ 
+input[type="email"], /*estilo del usuario y la contraseña*/ 
 input[type="password"] {
     font-size: 18px;
     width: 82%;
@@ -31,16 +35,10 @@ input[type="password"] {
     border: none;
 }
 
-.input-contenedor { /*borde y estilo del usuario y la contraseña*/
+.input-contenedor { /*borde y estilo del usuario */
     margin-bottom: 15px;
-    border: 0.5px solid #aaa;
     border: none;
-} 
-.input-contenedor2 { /*borde y estilo del usuario y la contraseña*/
-    margin-bottom: 15px;
-    border: 0.5px solid #aaa;
-    border: none;
-} 
+}
 
 .icon { /* estilo de los iconos.*/
     min-width: 40px;

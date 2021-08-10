@@ -20,7 +20,7 @@ fetch(PRODUCTS_URL)
         <div class="col">
             <div class="d-flex w-100 justify-content-between">
             <h4 class="mb-1">`+ data.name +`</h4>
-            <small class="text-muted">` + data.currency + data.cost + `</small>
+            <small class="text-muted">` + data.currency + " " + data.cost + `</small>
         </div>
             <p class="mb-1">` + data.description + `</p>
             <p class="">Vendidos ` + data.soldCount + `</p>
