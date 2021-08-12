@@ -9,21 +9,21 @@ fetch(PRODUCTS_URL)
 
 .then( datosprod => {
     let principal = document.getElementById("principal");
-    for(let data of datosprod) {
+    for(let products of datosprod) {
 
     principal.innerHTML += 
     `<a href="category-info.html" class="list-group-item list-group-item-action">
     <div class="row">
         <div class="col-3">
-            <img src="` + data.imgSrc + `" alt="` + data.name + `" class="img-thumbnail"> 
+            <img src="` + products.imgSrc + `" alt="` + products.name + `" class="img-thumbnail"> 
         </div>
         <div class="col">
             <div class="d-flex w-100 justify-content-between">
-            <h4 class="mb-1">`+ data.name +`</h4>
-            <small class="text-muted">` + data.currency + " " + data.cost + `</small>
+            <h4 class="mb-1">`+ products.name +`</h4>
+            <small class="text-muted">` + products.currency + " " + products.cost + `</small>
         </div>
-            <p class="mb-1">` + data.description + `</p>
-            <p class="">Vendidos ` + data.soldCount + `</p>
+            <p class="mb-1">` + products.description + `</p>
+            <p class="">Vendidos ` + products.soldCount + `</p>
         </div>
     </div>
     </a> 
