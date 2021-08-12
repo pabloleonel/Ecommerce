@@ -3,89 +3,75 @@
     src: url(../webfonts/static/Raleway-Medium.ttf);
 }
 body {
-    /* background-image: url(perfectlogin.jpg); */
-    background-color: gainsboro;
+    background-color: white;
     font-family: Raleway-Medium; 
     margin: 0;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-.contenedor { /* div del usuario y la contraseña*/
+.contenedor { /* div del usuario y la contraseña */
     width: 100%;
     padding: 15px;
 }
 
-h1 { /*titulo*/
+h1 { /* titulo */
     color: black;
     font-size: 40px;
-    text-align: left;
     text-shadow: black;
     text-align: center;
-    border-radius: 10px;
 }
 
-input[type="email"], /*estilo del usuario y la contraseña*/ 
+input[type="email"], /* estilo del email y la contraseña */ 
 input[type="password"] {
-    font-size: 18px;
-    width: 82%;
-    padding: 10px;
+    font-size: 15px;
+    width: 75%;
+    padding: 11px;
     border: none;
 }
 
-.input-contenedor { /*borde y estilo del usuario */
+.input-contenedor { /* borde y estilo del usuario */
     margin-bottom: 15px;
     border: none;
 }
 
-.icon { /* estilo de los iconos.*/
+.icon { /* estilo de los iconos */
     min-width: 40px;
     color: black;
 }
 
-.button { /*estilo de lo que esta en el ingresar*/ 
+.button { /*estilo de lo que esta en el ingresar */ 
     border: none;
     width: 50%;
     color: white;
     font-size: 20px;
-    background-color: black;
+    background-color: #6eb454;
     padding: 10px 20px;
-    border-radius: 7px;
+    border-radius: 20px;
     cursor: pointer; 
     transition: 0.3s;
     margin-left: 30px;
 }
 
 .button:hover {
-    background-color: greenyellow;
+    background-color: royalblue;
 }
 
-p { /* texto de abajo del login*/
+p { /* texto de abajo del login */
     text-align: center;
 } 
 
-.link { /* completa con el de abajo*/
+.link { /* register */
     text-decoration: none;
-    color: black;
-    font-weight: 600;
-    transition: 0.2s;
     color: blue;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-.link:hover { /* le da junto con el de arriba el colorcito al registrar usuario*/
-    color: yellowgreen;
-} 
-
-@media(min-width:368px) /* le da el tamaño al formulario*/
+@media(min-width:340px) /* le da el tamaño al formulario */
 {
     .formulario {
         margin: auto;
-        width: 35%;
+        width: 30%;
         margin-top: 10%;
-        border-radius: 10px;
-        box-shadow: 0px;
         text-align: center;
     }
 }
