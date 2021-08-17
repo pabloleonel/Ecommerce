@@ -66,6 +66,11 @@ p { /* texto de abajo del login */
     cursor: pointer;
 }
 
+.g-signin2 {
+    margin-left: 500px;
+    margin-top: 10%;
+}
+
 @media(min-width:340px) /* le da el tamaño al formulario */
 {
     .formulario {

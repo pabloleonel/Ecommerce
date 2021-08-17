@@ -1,17 +1,14 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
 
-fetch(PRODUCTS_URL)
+fetch(PRODUCTS_URL) // traigo el json
 
-.then( respuesta => respuesta.json())
+.then( respuesta => respuesta.json()) // lo proceso
 
 .then( datosprod => {
-    let principal = document.getElementById("principal");
-    for(let products of datosprod) {
+    let principal = document.getElementById("principal"); // establezco un array para traer el div del html
+    for(let products of datosprod) { // for que procesa lo que viene del json 
 
-    principal.innerHTML += 
+    principal.innerHTML += // incerto en el html de la misma manera que se hace en categories. 
     `<a href="" class="list-group-item list-group-item-action">
     <div class="row">
         <div class="col-3">

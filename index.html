@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylelyr.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
-    <title>Login</title>
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="google-signin-client_id"
+        content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+
 <body>
     <form class="formulario" action="home.html">
         <h1>Log In</h1>
-            <hr>
+        <hr>
         <div class="contenedor"><br>
-            <div class="input-contenedor">  
-                <i class="fa fa-envelope icon"></i>    
+            <div class="input-contenedor">
+                <!-- Email -->
+                <i class="fa fa-envelope icon"></i>
                 <input type="email" placeholder="Email" required>
             </div>
 
-            <div class="input-contenedor">  
-                <i class="fas fa-key icon"></i>       
-                <input type="password" placeholder="Contraseña" required/>
+            <div class="input-contenedor">
+                <!-- Contraseña -->
+                <i class="fas fa-key icon"></i>
+                <input type="password" placeholder="Contraseña" required />
             </div>
 
-            <input type="submit" value="Ingresar" id="ingresar-bottom" class="button"> <!-- darle al boton la funcion de ir al home--> <br><br>
-        
+            <input type="submit" value="Ingresar" id="ingresar-bottom" class="button"><br><br> <!-- Boton -->
+
             <input type="checkbox" id="check-bottom" name="Boton-Check">
             <label for="check-bottom"> Recuérdame</label><br><br>
 
             <p>Si no tienes una cuenta, <a class="link" href="register.html">registrate aquí</a></p>
         </div>
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </form>
 </body>
+
 </html>
