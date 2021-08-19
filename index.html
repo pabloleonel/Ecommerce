@@ -17,37 +17,33 @@
     <script src="js/login.js"></script>
 
 <body>
-    <form class="formulario" action="home.html">
+    <form class="formulario" onsubmit="return balidacion();">
         <h1>Log In</h1>
         <hr>
         <div class="contenedor"><br>
             <div class="input-contenedor">
                 <!-- Email -->
                 <i class="fa fa-envelope icon"></i>
-                <input type="text" placeholder="Email" required/>
-            </div>
+                <input type="text" placeholder="Usuario" id="user" required />
 
-            <div class="input-contenedor">
                 <!-- Contraseña -->
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" required/>
+                <input type="password" placeholder="Contraseña" id="pass" required />
+
             </div>
 
-           <!-- <input type="submit" value="Ingresar" id="ingresar-bottom" class="button"><br><br>-->
-            <div class="g-signin2" data-onsuccess="onSignIn"></div> 
-            <script>
-                
-            </script>
-            <!-- Cambiar el input a un button, y darle la funcionalidad de js!!!  -->
-             <button id="" onclick="validar()" type="button"></button> 
+           <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+             Cambiar el input a un button, y darle la funcionalidad de js!!! -->
+            <button id="ingresar-bottom" type="button" value="Ingresar" class="button"></button><br><br>
 
-            <input type="checkbox" id="check-bottom" name="Boton-Check">
+            <!--<input type="checkbox" id="check-bottom" name="Boton-Check">
             <label for="check-bottom"> Recuérdame</label><br><br>
 
-            <p>Si no tienes una cuenta, <a class="link" href="register.html">registrate aquí</a></p>
+            <p>Si no tienes una cuenta, <a class="link" href="register.html">registrate aquí</a></p> -->
+
         </div>
 
-        
+
     </form>
 </body>
 

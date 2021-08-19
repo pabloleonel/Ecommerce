@@ -9,7 +9,7 @@ body {
 }
 
 .contenedor { /* div del usuario y la contraseña */
-    width: 100%;
+    width: 400px;
     padding: 15px;
 }
 
