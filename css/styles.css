@@ -139,3 +139,13 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.btn-default{
+  color: white;
+}
+
+.dropdown-menu li a{
+  text-decoration: none;
+  padding-left: 10px;
+  padding-left: 20px;
+}

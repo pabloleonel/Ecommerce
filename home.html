@@ -5,13 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <!-- ID DE GOOGLE PARA CONECTAR EL LOGIN-->
+    <meta name="google-signin-client_id"
+        content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com"> 
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -21,12 +24,22 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a class="py-2 d-none d-md-inline-block" href="#" onclick="signOut()">Sign Out</a>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-user"></i><span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu"> <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
+            <li><a href="my-profile.html">Perfil</a></li>
+            <li><hr></li> 
+            <li><a href="#" onclick="signOut()" style="cursor: pointer;">Sing Out</a></li>
+          </ul>
+        </div>  
+        <!-- Funcion de singout para que no quede la sesion siempre abierta. -->      
         <script>
-            function signOut() {
+            function signOut() { 
               var auth2 = gapi.auth2.getAuthInstance();
               auth2.signOut().then(function () {
-                console.log('User signed out.');
+                window.location.href="index.html"
               });
             }
 
@@ -44,6 +57,7 @@
           <h1></h1>
         </div>
       </section>
+
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
@@ -120,5 +134,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> <!-- Api de google para el login -->
   </body>
 </html>
