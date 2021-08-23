@@ -65,8 +65,6 @@ input[type="password"] {
     cursor: pointer;
 }
 
-
-
 @media(min-width:300px) /* le da el tamaño al formulario */
 {
     .formulario {
