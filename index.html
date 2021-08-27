@@ -13,12 +13,14 @@
         content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
     <script src="js/login.js"></script>
 
+</head>
 <body>
     <form class="formulario" action="home.html">
         <h1>Log In</h1>
         <hr>
         <div class="contenedor">
             <div class="input-contenedor">
+                
                 <!-- Email -->
                 <i class="fas fa-user icon"></i>
                 <input type="text" placeholder="Usuario" id="user" required/>
@@ -29,17 +31,15 @@
 
             </div>
 
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <input type="submit" value="Ingresar" class="button"> <br><br><br>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div> 
+            
+            <button type="submit" class="button">Ingresar</button><br><br><br>
         
             <p>¿Aún no tienes una cuenta?, <a class="link" href="register.html">registrate aquí</a></p> 
 
         </div>
-        
-
-
     </form>
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> <!-- Api de google para el login -->
 </body>
 
 </html>
