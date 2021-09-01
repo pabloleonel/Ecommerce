@@ -11,35 +11,52 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="google-signin-client_id"
         content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
-    <script src="js/login.js"></script>
+
+</head>
 
 <body>
-    <form class="formulario" action="home.html">
+    <form class="formulario">
         <h1>Log In</h1>
         <hr>
         <div class="contenedor">
             <div class="input-contenedor">
-                <!-- Email -->
-                <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Usuario" id="user" required/>
-
+                <!-- User -->
+                <div class="input-user">
+                    <i class="fas fa-user icon" id="icon1"></i>
+                    <input type="text" placeholder="Usuario" id="user" autocomplete="off" required/>
+                </div>
                 <!-- Contraseña -->
-                <br><i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" id="pass" required/>
+                <div id="input-pass"></div>
+                <br><i class="fas fa-key icon" id="icon2"></i>
+                <input type="password" placeholder="Contraseña" id="pass" required />
+                <img src="img/passwordview.png" alt="" id="boton" onclick="viewPass()">
 
             </div>
 
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <input type="submit" value="Ingresar" class="button"> <br><br><br>
-        
-            <p>¿Aún no tienes una cuenta?, <a class="link" href="register.html">registrate aquí</a></p> 
+
+            <input type="button" id="btnLogin" class="button" onclick="validar()" value="Ingresar"><br><br><br>
+
+            <p>¿Aún no tienes una cuenta?, <a class="link" href="register.html">registrate aquí</a></p>
 
         </div>
-        
-
-
     </form>
+
+    <script>
+
+        let pass = document.getElementById("pass"); // funcion de mostrar contraseña. 
+        function viewPass() {
+            if (pass.type == "password") {
+                pass.type = "text"
+            } else {
+                pass.type = "password"
+            }
+        }
+
+    </script>
+    <script src="js/login.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <!-- Api de google para el login -->
 </body>
 
 </html>
