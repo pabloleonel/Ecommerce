@@ -8,7 +8,7 @@ document.getElementById("searchbox").addEventListener("keyup", function(e){ // t
         .then(response => response.json())
         .then(productos => {
             for(let products of productos){
-                let nombre = products.name.toLowerCase(); // convertir en nombre del producto en minuscula. 
+                let nombre = products.name.toLowerCase();
                 if(nombre.indexOf(searchbox) != -1){ // indexOf utilizado para buscar los elementos de una lista.
                     results.innerHTML += `<a href="" class="list-group-item list-group-item-action">
                         <div class="row">

@@ -8,12 +8,16 @@ let password = document.getElementById("pass");
 function validar() { // funcion de la validacion del login.
     const home = "home.html"; //redireccion
     miStorage.setItem('nombreUsuario', userName.value); //guardo el usuario en el localstorage
-    if (userName.value === "" || password.value === "") {
+    if (userName.value === "") {
         alert("Campos incompletos, algún campo vacio.");
     }
     else {
-        window.location.href = "home.html"
-    }}
+        if(password.value === ""){
+        alert("Campos incompletos, algún campo vacio.");
+        }
+    }
+     window.location.href = "home.html"   
+    }
 
 function onSignIn(googleUser) { // poner username en el navbar, pero con google. 
     var perfil = googleUser.getBasicProfile();
