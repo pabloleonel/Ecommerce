@@ -5,7 +5,11 @@
 .jumbotron .display-4{
     font-weight: bold;
 }
-
+.reflexalv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
