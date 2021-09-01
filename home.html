@@ -30,7 +30,7 @@
         <button type="button" class="btn btn-default dropdown-toggle reflexalv" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           </span>
-          <div id="userimpress"></div>
+          <div id="userImpress"></div>
         </button>
         <ul class="dropdown-menu">
           <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
@@ -43,12 +43,10 @@
       </div>
       <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
       <script>
-        function signOut() {
+        function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
           var auth2 = gapi.auth2.getAuthInstance();
           let miStorage = window.localStorage;
-
           miStorage.setItem('nombreUsuario', '');
-
           auth2.signOut().then(function () {
             window.location.href = "index.html"
           });
