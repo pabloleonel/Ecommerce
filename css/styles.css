@@ -6,6 +6,11 @@
     font-weight: bold;
 }
 
+.centerIcon{
+  display: flex;
+  align-items: center;
+}
+
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
@@ -149,3 +154,37 @@ a.custom-card:hover {
   padding-left: 10px;
   padding-left: 20px;
 }
+
+#searchbox {
+  border-radius: 5px;
+  margin-top: 85px;
+}
+
+#tam {
+  width: 290px;
+  height: 490px;
+}
+
+#showProduct {
+  width: 640px;
+  transform: translate(300px, -425px);
+}
+
+#showProduct1{
+  width: 150px;
+  height: 100px;
+  transform: translate(900px, -820px);
+}
+
+#showProduct2{
+  width: 150px;
+  height: 100px;
+  transform: translate(900px, -780px);
+}
+
+#showProduct3{
+  width: 150px;
+  height: 100px;
+  transform: translate(900px, -725px);
+}
+

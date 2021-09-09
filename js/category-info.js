@@ -1,4 +1,4 @@
-var category = {}; // lista de productos dentro de cada categoria. 
+var category = {}; // lista de productos dentro de cada categoria.
 
 function showImagesGallery(array){
 

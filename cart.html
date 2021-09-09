@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <meta name="google-signin-client_id"
-        content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
+    content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
 
   <style>
     .bd-placeholder-img {
@@ -37,43 +37,76 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">  <!-- navbar de la parte superior de la pantalla --> 
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a> 
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="far fa-user"></i><span class="caret"></span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="img/logoemercadored.png" alt="" style="width: 40px;height: 40px;">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul
+          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
+          style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">Producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="cart.html">Mi carrito</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="sell.html">Vender</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group btn-success" style="border-radius: 5px;">
+        <button type="button" class="btn btn-default dropdown-toggle centerIcon" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          </span>
+          <div id="userImpress"></div>
         </button>
+        <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
         <ul class="dropdown-menu">
           <li><a href="my-profile.html">Perfil</a></li>
-          <li><hr></li>
+          <li>
+            <hr>
+          </li>
           <li><a href="#" onclick="signOut()" style="cursor: pointer;">Sing Out</a></li>
         </ul>
       </div>
     </div>
+    <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
     <script>
-      function signOut() {
+      function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
         var auth2 = gapi.auth2.getAuthInstance();
+        let miStorage = window.localStorage;
+        miStorage.setItem('nombreUsuario', '');
         auth2.signOut().then(function () {
-          window.location.href="index.html"
+          window.location.href = "index.html"
         });
       }
 
-      function onLoad(){
-        gapi.load('auth2', function(){
+      function onLoad() {
+        gapi.load('auth2', function () {
           gapi.auth2.init();
         });
       }
-  </script>
+
+    </script>
+    </div>
   </nav>
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
+      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega:
+        14/11/2021).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
@@ -90,6 +123,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/name.js"></script>
   <script src="js/cart.js"></script>
   <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 </body>

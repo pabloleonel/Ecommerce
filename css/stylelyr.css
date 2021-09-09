@@ -13,31 +13,26 @@ body {
     padding: 15px;
 }
 
-h1 { /* titulo */
+#title { /* titulo */
     color: black;
     font-size: 40px;
-    text-shadow: black;
-    text-align: center;
+    text-align: left;
+    display: inline-flex;
+    padding: 8px;
 }
 
 input[type="text"], /* estilo del email y la contraseña */ 
 input[type="password"] {
     font-size: 15px;
-    width: 75%;
+    width: 65%;
     padding: 15px;
     border: none;
 }
 
-.input-contenedor { /* borde y estilo del usuario */
-    margin-bottom: 5px;
-    border: none;
+.input-user {
+    margin-left: -20px;
 }
 
-.icon { /* estilo de los iconos */
-    min-width: 40px;
-    color: black;
-    text-align: left;
-}
 
 .button { /*estilo de lo que esta en el ingresar */ 
     width: 30%;
@@ -65,7 +60,10 @@ input[type="password"] {
     cursor: pointer;
 }
 
-
+#boton{
+    width: 30px;
+    cursor: pointer;
+}
 
 @media(min-width:300px) /* le da el tamaño al formulario */
 {
