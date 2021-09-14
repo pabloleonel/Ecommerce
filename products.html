@@ -8,11 +8,15 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <!--Boostrap-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+
   <meta name="google-signin-client_id"
     content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
 </head>
@@ -20,13 +24,16 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <img src="img/logoemercadored.png" alt="" style="width: 40px;height: 40px;">
+      <img src="img/logoemercado.png" alt="" class="img-fluid" style="width: 40px;height: 45px;">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" style="margin-right: 50%;" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarScroll">
+
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
           style="--bs-scroll-height: 100px;">
@@ -47,12 +54,14 @@
           </li>
         </ul>
       </div>
-      <div class="btn-group btn-success" style="border-radius: 5px;">
+      <div class="btn-group btn-success justify-content-around text-center"
+        style="border-radius: 5px;position: absolute;top: 12px; right: 10px;">
         <button type="button" class="btn btn-default dropdown-toggle centerIcon" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           </span>
           <div id="userImpress"></div>
         </button>
+
         <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
         <ul class="dropdown-menu">
           <li><a href="my-profile.html">Perfil</a></li>
@@ -62,111 +71,119 @@
           <li><a href="#" onclick="signOut()" style="cursor: pointer;">Sing Out</a></li>
         </ul>
       </div>
-    </div>
-    <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
-    <script>
-      function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
-        var auth2 = gapi.auth2.getAuthInstance();
-        let miStorage = window.localStorage;
-        miStorage.setItem('nombreUsuario', '');
-        auth2.signOut().then(function () {
-          window.location.href = "index.html"
-        });
-      }
-
-      function onLoad() {
-        gapi.load('auth2', function () {
-          gapi.auth2.init();
-        });
-      }
-
-    </script>
-    </div>
   </nav>
-  <div class="text-center p-4">
-    <h2>Productos</h2>
-    <p class="lead">Verás aquí los productos destacados del sitio.</p>
+  <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
+  <script>
+    function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
+      var auth2 = gapi.auth2.getAuthInstance();
+      let miStorage = window.localStorage;
+      miStorage.setItem('nombreUsuario', '');
+      auth2.signOut().then(function () {
+        window.location.href = "index.html"
+      });
+    }
+
+    function onLoad() {
+      gapi.load('auth2', function () {
+        gapi.auth2.init();
+      });
+    }
+
+  </script>
   </div>
-  <main role="principal" class="pb-5">
-    <div class="container">
-      <div class="row">
-        <div id="searchbar"></div>
-
-        <div>
+  <main>
+    <div class="text-center p-4">
+      <h2>Productos</h2>
+      <p class="lead">Verás aquí los productos destacados del sitio.</p>
+    </div>
+    <main role="principal" class="pb-5">
+      <div class="container">
+        <div class="row">
+          <div id="searchbar"></div>
+          <div></div>
         </div>
-      </div>
 
 
-      <div class="row container p-0 m-0 col text-right">
-        <div class="col-md-6 text-left">
-          <input type="search" autocomplete="off" id="searchbox" placeholder=" Buscar Producto">
-        </div>
-        <div class="col-md-6 col-sm-12 mb-1 container">
-          <div class="col mb-4">
+        <div class="row container p-0 m-0 col text-right">
+          <div class="col-md-6 text-left">
+            <input type="search" autocomplete="off" id="searchbox" placeholder=" Buscar Producto">
           </div>
-          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-            <label class="btn btn-light active" id="sortAsc">
-              <input type="radio" name="options" autocomplete="" checked><i class="fas fa-dollar-sign"></i> <i
-                class="fas fa-sort-amount-up mr-1"></i>
-            </label>
-            <label class="btn btn-light" id="sortDesc">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-dollar-sign"></i> <i
-                class="fas fa-sort-amount-down mr-1"></i>
-            </label>
-            <label class="btn btn-light" id="sortByCount">
-              <input type="radio" name="options" autocomplete="off">Mas Vendidos
-            </label>
-          </div>
-          <div class="row container p-0 m-0">
-            <div class="col">
-              <p class="font-weight-normal text-right my-2">Precio: </p>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="col mb-4">
             </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-light active" id="sortAsc">
+                <input type="radio" name="options" autocomplete="" checked><i class="fas fa-dollar-sign"></i> <i
+                  class="fas fa-sort-amount-up mr-1"></i>
+              </label>
+              <label class="btn btn-light" id="sortDesc">
+                <input type="radio" name="options" autocomplete="off"><i class="fas fa-dollar-sign"></i> <i
+                  class="fas fa-sort-amount-down mr-1"></i>
+              </label>
+              <label class="btn btn-light" id="sortByCount">
+                <input type="radio" name="options" autocomplete="off">Mas Vendidos
+              </label>
             </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-            </div>
-            <div class="col-3 p-0">
-              <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button> <!-- Filtros -->
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Precio: </p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button> <!-- Filtros -->
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                </div>
               </div>
             </div>
           </div>
+        </div> <br>
+        <div class="row">
+          <div class="list-group" id="prod-list-container"></div>
         </div>
-      </div> <br>
-      <div class="row">
-        <div class="list-group" id="prod-list-container"></div>
+      </div>
+      </div>
+    </main>
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p class="float-right">
+          <i class="fas fa-arrow-up"></i><a href="#"><a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-  </main>
-  </div>
-  </main>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p class="float-right">
-        <i class="fas fa-arrow-up"></i><a href="#"><a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/name.js"></script>
-  <script src="js/buscar.js"></script>
-  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+    <!--Boostrap-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"></script>
+
+    <!--JS relacionados-->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/name.js"></script>
+    <script src="js/buscar.js"></script>
+
+    <!--Api de Google-->
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 </body>
 
 </html>

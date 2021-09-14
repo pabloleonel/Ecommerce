@@ -3,7 +3,7 @@
     src: url(../webfonts/static/Raleway-Medium.ttf);
 }
 body {
-    background-color: white;
+    background-color: #fefffe;
     font-family: Raleway-Medium; 
     margin: 0;
 }
@@ -70,7 +70,7 @@ input[type="password"] {
     .formulario {
         margin: auto;
         width: 400px;
-        margin-top: 10%;
+        margin-top: 6%;
         text-align: center;
         border-color: blue;
     }

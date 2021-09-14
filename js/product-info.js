@@ -5,23 +5,24 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-fetch(PRODUCT_INFO_URL)
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-        let productNameHTML = document.getElementById("productName");
-        let productDescriptionHTML = document.getElementById("productDescription"); 
-        let costProductHTML = document.getElementById("costProduct"); 
-        let soldCountProductHTML = document.getElementById("soldCountProduct"); 
+// fetch(PRODUCT_INFO_URL)
+//     .then(respuesta => respuesta.json())
+//     .then(datos => {
 
-        productNameHTML.innerHTML =  datos.name 
-        productDescriptionHTML.innerHTML = "Descripcion: <br>" + datos.description
-        costProductHTML.innerHTML = "Costo: " + datos.currency + " " + datos.cost
-        soldCountProductHTML.innerHTML = "Cantidad disponible: " + datos.soldCount
-        document.getElementById('showProduct').setAttribute("src", datos.images[0])
-        document.getElementById('showProduct1').setAttribute("src", datos.images[1])
-        document.getElementById('showProduct2').setAttribute("src", datos.images[2])
-        document.getElementById('showProduct3').setAttribute("src", datos.images[3])
+//         document.getElementById("...").innerHTML = datos.name
+//         document.getElementById("...").innerHTML = "Descripcion: <br>" + datos.description
+//         document.getElementById(".....").innerHTML = "Costo: " + datos.currency + " " + datos.cost
+//         document.getElementById("....").innerHTML = "Cantidad disponible: " + datos.soldCount
+//         document.getElementById('....').setAttribute("src", datos.images[0])
+//         document.getElementById('...').setAttribute("src", datos.images[1])
+//         document.getElementById('....').setAttribute("src", datos.images[2])
+//         document.getElementById('....').setAttribute("src", datos.images[3])
 
-    })
-    .catch(error => alert("Hubo un error: " + error));
-
+//     })
+//     .catch(error => alert("Hubo un error: " + error));
+    
+//     fetch(PRODUCT_INFO_COMMENTS_URL)
+//         .then(response => response.json())
+//         .then(comentario => {
+//            // document.getElementById("comentarios").innerHTML = comentario.description 
+//         })  
