@@ -8,82 +8,89 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <!--Otros-->
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
   <link href="css/font-awesome.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+
+  <!--Boostrap-->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!--Hoja de estilo-->
   <link href="css/styles.css" rel="stylesheet">
+
+  <!--Google Key-->
   <meta name="google-signin-client_id"
     content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <img src="img/logoemercadored.png" alt="" style="width: 40px;height: 40px;">
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul
-          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
-          style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="products.html">Producto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="cart.html">Mi carrito</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="sell.html">Vender</a>
-          </li>
-        </ul>
-      </div>
-      <div class="btn-group btn-success" style="border-radius: 5px;">
-        <button type="button" class="btn btn-default dropdown-toggle centerIcon" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          </span>
-          <div id="userImpress"></div>
-        </button>
-        <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
-        <ul class="dropdown-menu">
-          <li><a href="my-profile.html">Perfil</a></li>
-          <li>
-            <hr>
-          </li>
-          <li><a href="#" onclick="signOut()" style="cursor: pointer;">Sing Out</a></li>
-        </ul>
-      </div>
+    <img src="img/logoemercado.png" alt="" class="img-fluid" style="width: 40px;height: 45px;">
+    
+    <button class="navbar-toggler" style="margin-right: 50%;" type="button" data-toggle="collapse"
+      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
+        style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="sell.html">Vender</a>
+        </li>
+      </ul>
     </div>
-    <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
-    <script>
-      function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
-        var auth2 = gapi.auth2.getAuthInstance();
-        let miStorage = window.localStorage;
-        miStorage.setItem('nombreUsuario', '');
-        auth2.signOut().then(function () {
-          window.location.href = "index.html"
-        });
-      }
+    <div class="btn-group" style="border-radius: 5px;position: absolute;top: 12px; right: 10px;">
+      <button type="button" class="btn-success dropdown-toggle centerIcon" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <div id="userImpress"></div>
+      </button>
 
-      function onLoad() {
-        gapi.load('auth2', function () {
-          gapi.auth2.init();
-        });
-      }
-
-    </script>
+      <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="my-profile.html" style="color: indigo;"><i class="fas fa-user-alt" style="color: grey;"></i> Perfil</a></li>
+        <li>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link active" href="cart.html"><i class="fas fa-shopping-cart" style="font-size: 15px;color: grey;"></i>  Mi carrito</a>
+        </li>
+        <hr>
+        <li><a href="#" onclick="signOut()" style="cursor: pointer;"><i class="fas fa-sign-out-alt" style="color: grey;"></i> Sing Out</a></li>
+      </ul>
     </div>
   </nav>
+  <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
+  <script>
+    function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
+      var auth2 = gapi.auth2.getAuthInstance();
+      let miStorage = window.localStorage;
+      miStorage.setItem('nombreUsuario', '');
+      auth2.signOut().then(function () {
+        window.location.href = "index.html"
+      });
+    }
+
+    function onLoad() {
+      gapi.load('auth2', function () {
+        gapi.auth2.init();
+      });
+    }
+
+  </script>
   <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Categorías</h2>
@@ -136,7 +143,7 @@
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
-        <i class="fas fa-arrow-up"></i><a href="#"><a href="#">Volver arriba</a>
+        <i class="fas fa-arrow-up"></i><a href="#">Volver arriba</a>
       </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
@@ -150,12 +157,15 @@
       <div></div>
     </div>
   </div>
+
+  <!--JS relacionados-->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/buscar.js"></script>
   <script src="js/name.js"></script>
   <script src="js/categories.js"></script>
+
+  <!--Api de Google-->
   <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 </body>
 

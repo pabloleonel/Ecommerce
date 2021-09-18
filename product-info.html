@@ -8,97 +8,163 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+  <!--Boostrap-->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+
   <link href="css/styles.css" rel="stylesheet">
+
   <meta name="google-signin-client_id"
     content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
+
+  <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
+  <script>
+    function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
+      var auth2 = gapi.auth2.getAuthInstance();
+      let miStorage = window.localStorage;
+      miStorage.setItem('nombreUsuario', '');
+      auth2.signOut().then(function () {
+        window.location.href = "index.html"
+      });
+    }
+
+    function onLoad() {
+      gapi.load('auth2', function () {
+        gapi.auth2.init();
+      });
+    }
+
+  </script>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <img src="img/logoemercadored.png" alt="" style="width: 40px;height: 40px;">
+    <img src="img/logoemercado.png" alt="" class="img-fluid" style="width: 40px;height: 45px;">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul
-          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
-          style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="products.html">Producto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="cart.html">Mi carrito</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="sell.html">Vender</a>
-          </li>
-        </ul>
-      </div>
-      <div class="btn-group btn-success" style="border-radius: 5px;">
-        <button type="button" class="btn btn-default dropdown-toggle centerIcon" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          </span>
-          <div id="userImpress"></div>
-        </button>
-        <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
-        <ul class="dropdown-menu">
-          <li><a href="my-profile.html">Perfil</a></li>
-          <li>
-            <hr>
-          </li>
-          <li><a href="#" onclick="signOut()" style="cursor: pointer;">Sing Out</a></li>
-        </ul>
-      </div>
+    <button class="navbar-toggler" style="margin-right: 50%;" type="button" data-toggle="collapse"
+      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
+        style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="sell.html">Vender</a>
+        </li>
+      </ul>
     </div>
-    <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
-    <script>
-      function signOut() { // no cerrar sesion de google y de user hasta que se apriete singout. 
-        var auth2 = gapi.auth2.getAuthInstance();
-        let miStorage = window.localStorage;
-        miStorage.setItem('nombreUsuario', '');
-        auth2.signOut().then(function () {
-          window.location.href = "index.html"
-        });
-      }
+    <div class="btn-group" style="border-radius: 5px;position: absolute;top: 12px; right: 10px;">
+      <button type="button" class="btn-success dropdown-toggle centerIcon" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <div id="userImpress"></div>
+      </button>
 
-      function onLoad() {
-        gapi.load('auth2', function () {
-          gapi.auth2.init();
-        });
-      }
-
-    </script>
+      <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="my-profile.html" style="color: indigo;"><i class="fas fa-user-alt" style="color: grey;"></i>
+            Perfil</a></li>
+        <li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="cart.html"><i class="fas fa-shopping-cart"
+              style="font-size: 15px;color: grey;"></i>Mi carrito</a>
+        </li>
+        <hr>
+        <li><a href="#" onclick="signOut()" style="cursor: pointer;"><i class="fas fa-sign-out-alt"
+              style="color: grey;"></i>Sign Out</a></li>
+      </ul>
     </div>
   </nav>
+
+  <!--  Principal  -->
   <main role="main">
     <div class="container mt-5">
       <h3 id="productName" class="text-center"></h3>
       <h5 class="text-center p-4">Aqui veras toda la informaración relacionada al producto.</h5>
-      <div class="text-center border col-6" id="tam">
+      <div class="text-center">
         <hr class="my-3">
-        <p id="costProduct"></p>
-        <p id="soldCountProduct"></p>
-        <p id="productDescription" class=""></p>
-        <img id="showProduct"></img>
-        <img id="showProduct1" alt="" class="border">
-        <img id="showProduct2" alt="">
-        <img id="showProduct3" alt="">
-      </div><br>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+
+        <!-- Carrousel and info -->
+        <div id="carouselExampleIndicators" class="carousel d-block" data-ride="carousel"></div>
+        <div id="productInfo"></div>
+
+        <button type="button" class="btn btn-success"><span>Agregar a carrito</span></button>
+        <button type="button" class="btn btn-info"><span></span>Adquirir</button>
+
+      </div>
+      <hr><br><br>
+
+      <!-- Agregar comentario -->
+
+      <h1 class="text-center">Comentarios</h1>
+      <hr><br><br>
+
+      <!-- Stars HTML -->
+
+      <div class="container" id="starView">
+
+        <!-- Formulario para agregar comentario. -->
+
+        <form id="formulario">
+          <div class="container containerstar text-around-center text-center">
+            <div class="star-widget">
+              <span>Califica este producto!</span>
+              <input type="radio" name="rate" value="5" id="rate-5">
+              <label for="rate-5" class="fas fa-star"></label>
+
+              <input type="radio" name="rate" value="4" id="rate-4">
+              <label for="rate-4" class="fas fa-star"></label>
+
+              <input type="radio" name="rate" value="3" id="rate-3">
+              <label for="rate-3" class="fas fa-star"></label>
+
+              <input type="radio" name="rate" value="2" id="rate-2">
+              <label for="rate-2" class="fas fa-star"></label>
+
+              <input type="radio" name="rate" value="1" id="rate-1">
+              <label for="rate-1" class="fas fa-star"></label>
+            </div>
+          </div>
+
+          <textarea name="" id="menssage" cols="80" rows="3" placeholder="Agregar comentario"></textarea>
+          <button type="button" id="enviar" class="btn btn-dark containerstar" style="float:right;" value="Enviar"
+            onclick="saveMessage()">Publicar</button><br>
+          <div id="showComments" style="padding-top: 40px;"></div>
+        </form>
+
+
+      </div>
+    </div>
+
+    <!-- Información comentario -->
+    <div class="container text-left text-lg-left pt-2">
+      <div class="container">
+        <div id="comentarios"></div>
+      </div>
+    </div>
+
+    <br>
+    <a type="button" class="container btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
   <footer class="text-muted bg-light">
@@ -118,11 +184,16 @@
       <div></div>
     </div>
   </div>
+  <!--  Scripts   -->
+
+  <!--JS relacioandos-->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/name.js"></script>
   <script src="js/product-info.js"></script>
+
+  <!--Api de Google-->
   <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 </body>
 

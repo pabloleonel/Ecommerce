@@ -4,98 +4,25 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <meta name="description" content="">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+
   <link href="css/styles.css" rel="stylesheet">
 
   <!-- ID DE GOOGLE PARA CONECTAR EL LOGIN-->
 
   <meta name="google-signin-client_id"
     content="410889946222-4ae3sq7qct6er2v8v0o3klbad6ljk0n4.apps.googleusercontent.com">
-
-</head>
-
-<body>
-  <!--
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarToggler"
-        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse collapse" id="navbarToggler">
-        <ul class="navbar-nav container justify-content-around text-center">
-          <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn-default" style="text-decoration: none;" href="home.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn-default" style="text-decoration: none;" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn-default" style="text-decoration: none;" href="products.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn-default" style="text-decoration: none;" href="cart.html">Mi carrito</a>
-          </li>
-          <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn-default" style="text-decoration: none;" href="sell.html">Vender</a>
-          </li>
-        </ul> 
-      </div>  -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <img src="img/logoemercadored.png" alt="" style="width: 40px;height: 40px;"> 
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="products.html">Producto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="cart.html">Mi carrito</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="sell.html">Vender</a>
-          </li>
-        </ul>
-      </div>
-      <div class="btn-group btn-success" style="border-radius: 5px;">
-        <button type="button" class="btn btn-default dropdown-toggle centerIcon" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          </span>
-          <div id="userImpress"></div>
-        </button>
-        <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
-        <ul class="dropdown-menu">
-          <li><a href="my-profile.html">Perfil</a></li>
-          <li>
-            <hr>
-          </li>
-          <li><a href="#" onclick="signOut()" style="cursor: pointer;">Sing Out</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
 
   <!-- Funciones de singout para que no quede la sesion siempre abierta. -->
   <script>
@@ -115,6 +42,57 @@
     }
 
   </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="img/logoemercado.png" alt="" class="img-fluid" style="width: 40px;height: 45px;">
+
+    <button class="navbar-toggler" style="margin-right: 50%;" type="button" data-toggle="collapse"
+      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
+        style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="sell.html">Vender</a>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" style="border-radius: 5px;position: absolute;top: 12px; right: 10px;">
+      <button type="button" class="btn-success dropdown-toggle centerIcon" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <div id="userImpress"></div>
+      </button>
+
+      <!-- MENU DESPLEGABLE DE BOOSTRAP PARA EL USER -->
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="my-profile.html" style="color: indigo;"><i class="fas fa-user-alt" style="color: grey;"></i>
+            Perfil</a></li>
+        <li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="cart.html"><i class="fas fa-shopping-cart"
+              style="font-size: 15px;color: grey;"></i> Mi carrito</a>
+        </li>
+        <hr>
+        <li><a href="#" onclick="signOut()" style="cursor: pointer;"><i class="fas fa-sign-out-alt"
+              style="color: grey;"></i> Sing Out</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main role="main">
@@ -197,18 +175,16 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+
+  <!--Otros JS relacionados-->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-    integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
-    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
-    crossorigin="anonymous"></script>
   <script src="js/name.js"></script>
   <script src="js/init.js"></script>
-  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
   <!-- Api de google para el login -->
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
 </body>
 
 </html>
