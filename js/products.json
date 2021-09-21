@@ -1,7 +1,6 @@
 [
     {
         "name": "Chevrolet Onix Joy",
-        "id": "0",
         "description": "Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.",
         "cost": 13500,
         "currency": "USD",
@@ -19,7 +18,6 @@
     },
     {
         "name": "Fiat Way",
-        "id": "1",
         "description": "La versión de Fiat que brinda confort y a un precio accesible.",
         "cost": 14500,
         "currency": "USD",
@@ -37,7 +35,6 @@
     },
     {
         "name": "Suzuki Celerio",
-        "id": "2",
         "description": "Un auto que se ha ganado la buena fama por su economía con el combustible.",
         "cost": 12500,
         "currency": "USD",
@@ -55,7 +52,6 @@
     },
     {
         "name": "Peugeot 208",
-        "id": "3",
         "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.",
         "cost": 15200,
         "currency": "USD",
