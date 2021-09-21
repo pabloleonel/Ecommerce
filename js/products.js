@@ -46,7 +46,7 @@ function showProductsList() {
 
 
             htmlContentToAppend += // incerto en el html de la misma manera que se hace en Products. 
-                `<a href="product-info.html" class="list-group-item list-group-item-action">
+                `<span onclick="particularProd(` + `'` + products.name + `'` + `)" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + products.imgSrc + `" alt="` + products.name + `" class="img-thumbnail"> 
@@ -60,7 +60,7 @@ function showProductsList() {
                     <p class="">Vendidos ` + products.soldCount + `</p>
                 </div>
             </div>
-            </a> 
+            </span> 
             `;
         }
 
@@ -107,7 +107,7 @@ function showProductsList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(products.cost) <= maxCount))) { // lo que hace el min y el max es poner en filtros el rango de cantidad de productos que se quiera, parseInt es para pasar a entero.
 
             htmlContentToAppend += // incerto en el html de la misma manera que se hace en Products. 
-                `<a href="product-info.html" class="list-group-item list-group-item-action">
+                `<span onclick="particularProd(` + `'` + products.name + `'` + `)" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + products.imgSrc + `" alt="` + products.name + `" class="img-thumbnail"> 
@@ -121,7 +121,7 @@ function showProductsList() {
                     <p class="" style="text-align: left;">Vendidos ` + products.soldCount + `</p>
                 </div>
             </div>
-            </a> 
+            </span> 
             `;
         }
 
