@@ -7,6 +7,7 @@
         "currency": "USD",
         "soldCount": 14,
         "category": "Autos",
+        "imgSrc": "img/prod1.jpg"
         "images": [
             "img/prod1.jpg",
             "img/prod1_1.jpg",
@@ -24,6 +25,7 @@
         "currency": "USD",
         "soldCount": 52,
         "category": "Autos",
+        "imgSrc": "img/prod2.jpg"
         "images": [
             "img/prod2.jpg",
             "img/prod2_1.jpg",
@@ -41,6 +43,7 @@
         "currency": "USD",
         "soldCount": 25,
         "category": "Autos",
+        "imgSrc": "img/prod3.jpg"
         "images": [
             "img/prod3.jpg",
             "img/prod3_1.jpg",
@@ -58,6 +61,7 @@
         "currency": "USD",
         "soldCount": 17,
         "category": "Autos",
+        "imgSrc": "img/prod4.jpg"
         "images": [
             "img/prod4.jpg",
             "img/prod4_1.jpg",
