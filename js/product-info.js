@@ -10,37 +10,40 @@ document.addEventListener("DOMContentLoaded", function (e) {
 let arrayComentarios = []; // variable para guardar una lista de comentraios y posteriormente ponerlos en la pagina tomandolos del localstorage
 let saveStar; // variable para ver las estrellas guardadas
 let puntajeSelect; // variable para ver la cantidad de estrellas guardadas, y ponerlas junto a los demas datos guardados en el objeto showcomments.
+let producto = window.localStorage.getItem('particularProd');
 
 function prodShow() { // funcion para mostrar tanto los datos del prod, como el carrousel. 
-  fetch(PRODUCT_INFO_URL)
+  fetch(OTHER_PRODUCTS_URL)
     .then(respone => respone.json())
-    .then(datos => {
+    .then(prod => {
+      for (let datos of prod) {
+        if (datos.name == producto) {
 
-      // Nombre del auto
-      productName.innerHTML += datos.name
+          // Nombre del auto
+          productName.innerHTML += datos.name
 
-      // Datos del producto
-      productInfo.innerHTML += `<span class="text-left"><strong>Costo: </strong><br>${datos.cost} ${datos.currency}</span><br>
+          // Datos del producto
+          productInfo.innerHTML += `<span class="text-left"><strong>Costo: </strong><br>${datos.cost} ${datos.currency}</span><br>
       <br><strong>Recuento de vendidos: </strong><br> ${datos.soldCount} 
       <br><br><strong> Descripcion:</strong><br>${datos.description}`
 
-      // Carrousel
-      let contenedorProduct = document.getElementById("carouselExampleIndicators") // traigo el div desde el html
+          // Carrousel
+          let contenedorProduct = document.getElementById("carouselExampleIndicators") // traigo el div desde el html
 
-      // le inserto:
-      contenedorProduct.innerHTML = `
+          // le inserto:
+          contenedorProduct.innerHTML = `
         <div class="">
         <div id="carouselProducto" class="carousel" data-ride="carousel">
         <div class="carousel-inner" style="border-radius: 20px;">
         </div></div></div>`
 
-      // traigo a donde le voy a poner las imagenes
-      let contenedorSlider = document.getElementsByClassName("carousel-inner")[0]
+          // traigo a donde le voy a poner las imagenes
+          let contenedorSlider = document.getElementsByClassName("carousel-inner")[0]
 
-      //le agrego las imagenes con el codigo de boostrap y las imagenes del json, recorriendolos con el for de abajo.
-      for (let i = 0; i < datos.images.length; i++) {
-        const imagen = datos.images[i];
-        contenedorSlider.innerHTML += ` 
+          //le agrego las imagenes con el codigo de boostrap y las imagenes del json, recorriendolos con el for de abajo.
+          for (let i = 0; i < datos.images.length; i++) {
+            const imagen = datos.images[i];
+            contenedorSlider.innerHTML += ` 
         <div class="carousel-item">
         <img src="${imagen}" class="d-block w-100" alt="...">
         </div>
@@ -53,12 +56,41 @@ function prodShow() { // funcion para mostrar tanto los datos del prod, como el 
             <span class="sr-only">Next</span>
           </a>
           `
+            let imagenes = document.getElementsByClassName("carousel-item")
+            // le pongo el active para que aparezca primero, etc. 
+            imagenes[0].className += " active"
 
-        let imagenes = document.getElementsByClassName("carousel-item")
-        // le pongo el active para que aparezca primero, etc. 
-        imagenes[0].className += " active"
+          }
 
-      }
+          // Productos relacionados
+          for (let related of datos.relatedProducts) {
+
+            let relatedProd = document.getElementById('relatedProd'); // traigo el div del html. 
+    
+            relatedProd.innerHTML += // inserto en el div los productos con las clases de boostrap
+              `<div class="col-sm-4">
+                <div class="card"> <img src=${prod[related].imgSrc} class="card-img-top" width="100%"><br>
+                  <div class="card-body pt-0 px-0">
+                  <div class="d-flex flex-row justify-content-around mb-0 px-3"> <small class="text-muted mt-1">Nombre</small><br>
+                      <h6>${prod[related].name}</h6>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Precio</small><br>
+                      <h6>${prod[related].currency + " " + prod[related].cost}</h6>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Cantidad de vendidos</small>
+                      <h6>${prod[related].soldCount}</h6>
+                    </div>
+                    <hr class="mt-2 mx-3">
+                  </div>
+                  <div class="text-center mb-3">
+                    <button type="button" class="btn btn-info" onclick="particularProd(` + `'` + prod[related].name + `'` + `)"><p>Ver producto</p></button>
+                    <button type="button" class="btn btn-success"><p>Agregar al carrito</p></button>
+                  </div>
+                </div>
+              </div>
+            </div>`
+        }
+      }}
     })
 }
 
@@ -149,3 +181,5 @@ function showComments() { // funcion para mostrar los comentarios realizados.
 
   document.getElementById('showComments').innerHTML = texto;
 }
+
+// relatedProducts. 
