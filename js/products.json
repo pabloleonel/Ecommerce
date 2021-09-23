@@ -31,7 +31,7 @@
             "img/prod2_3.jpg",
             "img/prod2_4.jpg"
         ],
-        "relatedProducts": [0, 2, 3]
+        "relatedProducts": [4, 2, 3]
     },
     {
         "name": "Suzuki Celerio",
@@ -48,7 +48,7 @@
             "img/prod3_3.jpg",
             "img/prod3_4.jpg"
         ],
-        "relatedProducts": [1, 0, 3]
+        "relatedProducts": [1, 4, 3]
     },
     {
         "name": "Peugeot 208",
@@ -65,6 +65,23 @@
             "img/prod4_3.jpg",
             "img/prod4_4.jpg"
         ],
-        "relatedProducts": [2, 0, 1]
+        "relatedProducts": [2, 4, 1]
+    }, 
+    {
+        "name": "Hyundai HB20 1.0 Sedán",
+        "description": "El nuevo diseño HB20 1.0 destaca por su llamativo diseño y estilo elegante. Un auto pensado para que disfrutes de todas sus facilidades y comodidades con la mayor elegancia. Tapizado moderno y delicados detalles hacen del interior del HB20 1.0 lo mejor en sofisticación. ",
+        "cost": 15490,
+        "currency": "USD",
+        "soldCount": 34,
+        "category": "Autos",
+        "imgSrc": "img/prod5.jpg",
+        "images": [
+            "img/prod5.jpg",
+            "img/prod5_1.jpg",
+            "img/prod5_2.jpg",
+            "img/prod5_3.jpg",
+            "img/prod5_4.jpg"
+        ],
+        "relatedProducts": [3, 2, 1]
     }
 ]
