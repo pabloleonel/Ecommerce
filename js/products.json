@@ -1,27 +1,46 @@
-[{
-    "name": "Fiat Way",
-    "description": "La versión de Fiat que brinda confort y a un precio accesible.",
-    "cost": 14500,
-    "currency": "USD",
-    "soldCount": 52,
-    "category": "Autos",
-    "images": [
-        "img/prod2.jpg",
-        "img/prod2_1.jpg",
-        "img/prod2_2.jpg",
-        "img/prod2_3.jpg",
-        "img/prod2_4.jpg"
-    ],
-    "relatedProducts": []
-},
-
-{   
+[
+    {
+        "name": "Chevrolet Onix Joy",
+        "description": "Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.",
+        "cost": 13500,
+        "currency": "USD",
+        "soldCount": 14,
+        "category": "Autos",
+        "imgSrc": "img/prod1.jpg",
+        "images": [
+            "img/prod1.jpg",
+            "img/prod1_1.jpg",
+            "img/prod1_2.jpg",
+            "img/prod1_3.jpg",
+            "img/prod1_4.jpg"
+        ],
+        "relatedProducts": [2, 3, 4]
+    },
+    {
+        "name": "Fiat Way",
+        "description": "La versión de Fiat que brinda confort y a un precio accesible. Viene de serie con pantalla táctil multimedia, un tablero de instrumentos con mucha información (incluye alerta de pérdida de presión de los neumáticos) y volante multifunción. Es el auto más accesible del mercado argentino con control de estabilidad (ESP).  Tiene el conocido motor Firefly 1.3 litros, con ocho válvulas, 99 caballos de potencia a 6.000 rpm y 127 Nm de torque a 4.000 rpm.",
+        "cost": 14500,
+        "currency": "USD",
+        "soldCount": 52,
+        "category": "Autos",
+        "imgSrc": "img/prod2.jpg",
+        "images": [
+            "img/prod2.jpg",
+            "img/prod2_1.jpg",
+            "img/prod2_2.jpg",
+            "img/prod2_3.jpg",
+            "img/prod2_4.jpg"
+        ],
+        "relatedProducts": [4, 2, 3]
+    },
+    {
         "name": "Suzuki Celerio",
-        "description": "Un auto que se ha ganado la buena fama por su economía con el combustible.",
+        "description": "Un auto que se ha ganado la buena fama por su economía con el combustible. Hay dos aspectos en los que sobresale el Suzuki Celerio: el espacio destinado para los pasajeros y la capacidad de su maletero. Los ocupantes de las plazas posteriores tienen más espacio para las piernas de lo normal en los coches de tamaño exterior similar y también más altura libre al techo.",
         "cost": 12500,
         "currency": "USD",
         "soldCount": 25,
         "category": "Autos",
+        "imgSrc": "img/prod3.jpg",
         "images": [
             "img/prod3.jpg",
             "img/prod3_1.jpg",
@@ -29,17 +48,16 @@
             "img/prod3_3.jpg",
             "img/prod3_4.jpg"
         ],
-        "relatedProducts": []
-        
-},
-
-{
+        "relatedProducts": [1, 4, 3]
+    },
+    {
         "name": "Peugeot 208",
-        "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.",
+        "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad. Esta nueva generación de 208 transmite la sensación de ser un coche con una suspensión más elaborada que antes y mejor puesta a punto para preservar el confort a bordo. Es más silencioso y, al menos con los motores de 102 y 131 caballos así como con el eléctrico, la respuesta es buena.",
         "cost": 15200,
         "currency": "USD",
         "soldCount": 17,
         "category": "Autos",
+        "imgSrc": "img/prod4.jpg",
         "images": [
             "img/prod4.jpg",
             "img/prod4_1.jpg",
@@ -47,5 +65,23 @@
             "img/prod4_3.jpg",
             "img/prod4_4.jpg"
         ],
-        "relatedProducts": []
-}]
+        "relatedProducts": [4, 2, 1]
+    },
+    {
+        "name": "HB20 1.0 Sedán",
+        "description": "El nuevo diseño HB20 1.0 destaca por su llamativo diseño y estilo elegante. Tapizado moderno y delicados detalles hacen del interior del HB20 1.0 lo mejor en sofisticación. Un auto pensado para que disfrutes de todas sus facilidades y comodidades con la mayor elegancia. ",
+        "cost": 15490,
+        "currency": "USD",
+        "soldCount": 34,
+        "category": "Autos",
+        "imgSrc": "img/prod5.jpg",
+        "images": [
+            "img/prod5.jpg",
+            "img/prod5_1.jpg",
+            "img/prod5_2.jpg",
+            "img/prod5_3.jpg",
+            "img/prod5_4.jpg"
+        ],
+        "relatedProducts": [3, 2, 1]
+    }
+]
