@@ -18,7 +18,7 @@
     },
     {
         "name": "Fiat Way",
-        "description": "La versión de Fiat que brinda confort y a un precio accesible.",
+        "description": "La versión de Fiat que brinda confort y a un precio accesible. Desde su llegada sorprendió por su diseño y funcionalidades. A su vez, sus molduras en las puertas y sus fenders le aportan robustez a su diseño sin quitarle elegancia.",
         "cost": 14500,
         "currency": "USD",
         "soldCount": 52,
@@ -35,7 +35,7 @@
     },
     {
         "name": "Suzuki Celerio",
-        "description": "Un auto que se ha ganado la buena fama por su economía con el combustible.",
+        "description": "Un auto que se ha ganado la buena fama por su economía con el combustible. Ademas de que hay dos aspectos en los que sobresale el Suzuki Celerio: el espacio destinado para los pasajeros y la capacidad de su maletero.",
         "cost": 12500,
         "currency": "USD",
         "soldCount": 25,
@@ -52,7 +52,7 @@
     },
     {
         "name": "Peugeot 208",
-        "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.",
+        "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad. Esta nueva generación de 208 transmite la sensación de ser un coche con una suspensión más elaborada que antes y mejor puesta a punto para preservar el confort a bordo.",
         "cost": 15200,
         "currency": "USD",
         "soldCount": 17,
