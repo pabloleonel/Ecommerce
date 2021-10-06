@@ -46,6 +46,7 @@
 </head>
 
 <body>
+  <!-- Navbar menu -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="img/logoemercado.png" alt="" class="img-fluid" style="width: 40px;height: 45px;">
 
@@ -53,11 +54,11 @@
       data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul
-        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-start text-center"
         style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
@@ -73,8 +74,9 @@
         </li>
       </ul>
     </div>
+    <!-- Boton de User -->
     <div class="btn-group" style="border-radius: 5px;position: absolute;top: 12px; right: 10px;">
-      <button type="button" class="btn-success dropdown-toggle centerIcon" data-toggle="dropdown" aria-haspopup="true"
+      <button type="button" class="btn btn-success dropdown-toggle centerIcon" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <div id="userImpress"></div>
       </button>
@@ -91,7 +93,7 @@
         </li>
         <hr>
         <li><a href="#" onclick="signOut()" style="cursor: pointer;"><i class="fas fa-sign-out-alt"
-              style="color: grey;"></i>Sign Out</a></li>
+              style="color: grey;"></i>Sign Off</a></li>
       </ul>
     </div>
   </nav>
@@ -106,13 +108,20 @@
 
         <!-- Carrousel and info -->
         <div id="carouselExampleIndicators" class="carousel d-block" data-ride="carousel"></div>
-        <div id="productInfo"></div>
+        <div id="productInfo"></div><br>
 
         <button type="button" class="btn btn-success"><span>Agregar a carrito</span></button>
-        <button type="button" class="btn btn-info"><span></span>Adquirir</button>
+        <button type="button" class="btn btn-info"><span>Adquirir</span></button>
 
       </div>
-      <hr><br><br>
+      <br><br><br><br><hr>
+
+      <!-- Productos relacionados -->
+      <h1 style="text-align: center;">Productos Relacionados</h1><hr>
+      <div  class="container-fluid d-flex justify-content-center">
+        <div class="row mt-5" id="relatedProd"></div>
+      </div><br>
+      <hr>
 
       <!-- Agregar comentario -->
 
