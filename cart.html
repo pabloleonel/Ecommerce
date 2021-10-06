@@ -75,7 +75,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul
-        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-around text-center"
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navbar-nav container justify-content-start text-center"
         style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
@@ -92,7 +92,7 @@
       </ul>
     </div>
     <div class="btn-group" style="border-radius: 5px;position: absolute;top: 12px; right: 10px;">
-      <button type="button" class="btn-success dropdown-toggle centerIcon" data-toggle="dropdown"
+      <button type="button" class="btn btn-success dropdown-toggle centerIcon" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <div id="userImpress"></div>
       </button>
@@ -110,16 +110,32 @@
       </ul>
     </div>
   </nav>
+
   <main>
-    <div class="container p-5">
-      <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega:
-          14/11/2021).</p>
-        <hr>
-        <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-      </div>
+    <div class="container">
+      <div class="cart_section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="cart_container">
+                <div class="cart_title">Carrito de Compra<small class="text-muted" id="cantidadTotal"></small></div>
+                <div class="cart_items">
+                  <ul id="listaCarrito" class="cart_list"></ul>
+                </div>
+                <div class="order_total">
+                  <div class="order_total_content text-md-right">
+                    <span>Moneda</span>
+                    <div class="order_total_title">Total:</div>
+                    <div id="total"class="order_total_amount"></div>
+                  </div>
+                </div>
+                <div class="cart_buttons"> <button type="button" class="button cart_button_clear" onclick="goToProducts()">Ir a productos</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>
@@ -128,6 +144,7 @@
         <div></div>
       </div>
     </div>
+
   </main>
 
   <!--JS relacioandos-->
