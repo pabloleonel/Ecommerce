@@ -89,8 +89,7 @@ function prodShow() { // funcion para mostrar tanto los datos del prod, como el 
                   <hr class="mt-2 mx-3">
                 </div>
                 <div class="text-center mb-3">
-                  <button type="button" class="btn btn-info" onclick="particularProd(` + `'` + prodRel[related].name + `'` + `)"><p>Ver producto</p></button>
-                  <button type="button" class="btn btn-success"><p>Agregar al carrito</p></button>
+                  <button class="btn btn-info" onclick="particularProd(` + `'` + prodRel[related].name + `'` + `)"><p>Ver producto</p></button>
                 </div>
               </div>
             </div>
