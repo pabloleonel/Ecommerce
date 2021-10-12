@@ -62,6 +62,7 @@
 
   </script>
 </head>
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -111,96 +112,130 @@
       </ul>
     </div>
   </nav>
-
+  <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <main>
-    <div class="container">
-      <div class="cart_section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="cart_container">
-                <div class="cart_title">Carrito de Compra<small class="text-muted" id="cantidadTotal"></small></div>
-                <div class="cart_items">
-                  <ul id="cartList" class="cart_list"></ul>
-                </div>
-                <div class="order_total">
-                  <div class="order_total_content text-md-right">
-                    <span>Moneda</span>
-                    <div class="order_total_title">Total:</div>
-                    <div id="total" class="order_total_amount"></div>
-                  </div>
-                </div>
-                <div class="cart_buttons justify-content-start"><button class="btn btn-primary btn-lg float-left" type="submit"
-                    onclick="finishPurchase()">Ir a detalles de la compra</button><span id="textFinishPurchase"
-                    style="color: green;"></span> <button type="button" class="button cart_button_clear"
-                    onclick="goToProducts()">Ir a productos</button></div>
-              </div>
+    <!-- 
+        Bootstrap docs: https://getbootstrap.com/docs
+        Get more snippet on https://bootstraptor.com/snippets
+      -->
+
+    <section class="pt-5 pb-5">
+      <div class="container">
+        <div class="row w-100">
+          <div class="col-lg-12 col-md-12 col-12">
+            <h3 class="display-5 mb-2 text-center">Carrito de compras</h3>
+            <p class="mb-5 text-center">
+              <i class="text-info font-weight-bold" id="cantidadTotal">3</i> articulos en tu carrito
+            </p>
+            <table id="shoppingCart" class="table table-condensed table-responsive">
+              <thead>
+                <tr>
+                  <th style="width:60%">Producto</th>
+                  <th style="width:12%">Precio/U</th>
+                  <th style="width:10%">Cantidad</th>
+                  <th style="width:10%">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="cart_list"></tbody>
+            </table>
+            <div class="float-right text-right">
+              <h4>Total:<div id="total"></div>
+              </h4>
+            </div>
+          </div>
+          <!-- Botones -->
+          <div class="cart_buttons justify-content-start"><span id="textFinishPurchase" style="color: green;"></span>
+          </div>
+          <div class="col-sm-6 order-md-2 text-right">
+            <button class="btn btn-primary mb-4 btn-lg float-right" data-toggle="modal" data-target="#exampleModalCenter" onclick="finishPurchasee()">Finalizar
+              Compra</button>
+          </div>
+          <div class="row mt-4 d-flex align-items-center">
+            <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+              <a href="products.html">
+                <i class="fas fa-arrow-left mr-2" onclick="goToProducts()"></i> Ir a productos</a>
             </div>
           </div>
         </div>
-
-        <div id="detailspurchase">
-          <hr class="mb-4">
-          <h5 class="mb-3">Detalles de la compra</h5>
-          <div class="d-block my-3">
-            <div class="custom-control custom-radio">
-              <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked=""
-                required="">
-              <label class="custom-control-label" for="goldradio">Gold (13%)</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-              <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-              <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
-            </div>
-            <div class="row">
-              <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver
-                condiciones</button>
-            </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <hr class="mb-4">
-          <h4 class="mb-3">Costos</h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Precio</h6>
-                <small class="text-muted">Unitario del producto</small>
-              </div>
-              <span class="text-muted" id="productCostText">-</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Porcentaje agregado de envio</h6>
-              </div>
-              <span class="text-muted" id="comissionText">-</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total de la compra ($)</span>
-              <strong id="totalCostText">-</strong>
-            </li>
-          </ul>
-          <hr class="mb-4">
-
-          </form>
+          <div class="modal-body">
+            <!-- Detalles de la compra, costo de envio, etc. -->
+    <div id="detailspurchase" class="container">
+      <hr class="mb-4">
+      <h5 class="mb-3">Detalles de la compra</h5>
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+          <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+        </div>
+        <div class="row">
+          <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver
+            condiciones</button>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <h4 class="mb-3">Costos</h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Precio</h6>
+            <small class="text-muted">Unitario del producto</small>
+          </div>
+          <span class="text-muted" id="productCostText">-</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Porcentaje agregado de envio</h6>
+          </div>
+          <span class="text-muted" id="comissionText">-</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total de la compra ($)</span>
+          <strong id="totalCostText">-</strong>
+        </li>
+      </ul>
+      <hr class="mb-4">
+    </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
     </div>
-  </main>
-  </div>
-
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
 
   </main>
+
 
   <!--JS relacioandos-->
   <script src="js/jquery-3.4.1.min.js"></script>
