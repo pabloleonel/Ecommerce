@@ -13,6 +13,10 @@ function particularProd(nameProd) {
   window.location.href="product-info.html"
 }
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }

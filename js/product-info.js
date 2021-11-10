@@ -80,22 +80,20 @@ function prodShow() { // funcion para mostrar tanto los datos del prod, como el 
                   <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Precio</small><br>
                     <h6>${prodRel[related].currency + " " + prodRel[related].cost}</h6>
                   </div>
-                  <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Precio</small><br>
+                  <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Vendidos</small><br>
                     <h6>${prodRel[related].soldCount}</h6>
                   </div>
-                  <div class="d-flex flex-row justify-content-between text-right mb-0 px-3"> <small class="text-muted mt-1">Descripcion</small>
+                  <div class="d-flex flex-row justify-content-between text-right mb-0 px-3"> <small class="text-muted mt-1">Descripción</small>
                     <p>${prodRel[related].description}</p>
                   </div>
                   <hr class="mt-2 mx-3">
                 </div>
                 <div class="text-center mb-3">
-                  <button type="button" class="btn btn-info" onclick="particularProd(` + `'` + prodRel[related].name + `'` + `)"><p>Ver producto</p></button>
-                  <button type="button" class="btn btn-success"><p>Agregar al carrito</p></button>
+                  <button class="btn btn-info" onclick="particularProd(` + `'` + prodRel[related].name + `'` + `)"><p>Ver producto</p></button>
                 </div>
               </div>
             </div>
           </div>`
-
               }
             })
         }

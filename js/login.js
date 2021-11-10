@@ -6,7 +6,6 @@ let userName = document.getElementById("user");
 let password = document.getElementById("pass");
 
 function validar() { // funcion de la validacion del login.
-    const home = "home.html"; //redireccion
     miStorage.setItem('nombreUsuario', userName.value); //guardo el usuario en el localstorage
     if (userName.value === "" || password.value === "") {
         alert("Campos incompletos, algún campo vacio.");

@@ -44,21 +44,17 @@ function showProductsList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(products.cost) <= maxCount))) { // lo que hace el min y el max es poner en filtros el rango de cantidad de productos que se quiera, parseInt es para pasar a entero.
 
             htmlContentToAppend += // incerto en el html de la misma manera que se hace en Products. 
-                `<span onclick="particularProd(` + `'` + products.name + `'` + `)" class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + products.imgSrc + `" alt="` + products.name + `" class="img-thumbnail"> 
+            `   <div class="col-lg-4 col-md-6 col-sm-12" onclick="particularProd(` + `'` + products.name + `'` + `)">
+                    <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top" src="${products.imgSrc}" alt="${products.description}">
+                        <div class="card-body">
+                            <h4 class="mb-1">${products.name}</h4>
+                            <strong><p class="mb-1">${products.currency} ${products.cost}</p></strong>
+                            <p class="card-text">${products.description}</p>
+                            <small class="text-muted">${products.soldCount} artículos vendidos</small>
+                        </div>
+                    </a>
                 </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h4 class="mb-1">`+ products.name + `</h4>
-                    <small class="text-muted">` + products.currency + " " + products.cost + `</small>
-                </div>
-                    <p class="mb-1" style="text-align: left;">` + products.description + `</p>
-                    <p class="" style="text-align: left;">Vendidos ` + products.soldCount + `</p>
-                </div>
-            </div>
-            </span> 
             `;
         }
 
@@ -97,13 +93,13 @@ function searchProduct() {
 }
 
 function sortAndShowProducts(sortCriterio, productsArray) {
-    currentsortCriterio = sortCriterio;
+    currentSortCriterio = sortCriterio;
 
     if (productsArray != undefined) {
         currentProductsArray = productsArray;
     }
 
-    currentProductsArray = sortProducts(currentsortCriterio, currentProductsArray);
+    currentProductsArray = sortProducts(currentSortCriterio, currentProductsArray);
 
     //Muestro las prodegorías ordenadas
     showProductsList();
