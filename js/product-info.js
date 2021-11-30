@@ -102,19 +102,18 @@ function prodShow() { // funcion para mostrar tanto los datos del prod, como el 
 }
 
 function saveMessage() { //funcion para guardar comentarios nuevos.
-  let textoMensaje = document.getElementById('menssage').value; //Obtengo el elemento textArea
+  let menssageText = document.getElementById('menssage').value; //Obtengo el elemento textArea
 
-  if (textoMensaje != '') { //Si el texto no esta vacio...
+  if (menssageText != '') { //Si el texto no esta vacio...
 
     let messageReg = { //Creo un objeto con el mensaje y la fecha
       fechaHora: new Date(), //fecha actual new Date
-      mensaje: textoMensaje, //obtener el mensaje del textarea
+      mensaje: menssageText, //obtener el mensaje del textarea
       score: scoreSelect,
       usuario: localStorage.getItem('nombreUsuario') //Obtengo el usuario del localstorage
     };
 
     arrayComentarios.push(messageReg); //Agregar al array el mensaje
-
     showComments();
   }
 
@@ -153,7 +152,7 @@ function prodCommentsShow() { //funcion para mostrar los comentarios del json.
 
 function showComments() { // funcion para mostrar los comentarios realizados.
 
-  let texto = "";
+  let text = "";
 
   //traigo el div donde se guardan las estrellitas.
   let stars = document.getElementsByName('rate');
@@ -166,7 +165,7 @@ function showComments() { // funcion para mostrar los comentarios realizados.
   }
 
   // si estan chequeadas las almaceno en otro for, y en una variable saveStar para luego utilizarla cuando se imprime el comentario.
-  saveStar = "";
+  saveStar = 0;
   for (let i = 0; i < 5; i++) {
     if (i >= scoreSelect) {
       saveStar += `<span class="fa fa-star"></span>`
@@ -180,7 +179,7 @@ function showComments() { // funcion para mostrar los comentarios realizados.
     let mensajeAux = arrayComentarios[i];
 
     // agrego el texto al div que cree en el html, por encima de los otros comentarios ya realizados del json.
-    texto +=
+    text +=
       `<div class="comment-card container"><h4>${mensajeAux.usuario} ${saveStar}</h4>
       <br><p>${mensajeAux.mensaje}</p><p class="text-right">${mensajeAux.fechaHora.toLocaleDateString()}</p></p>
       </div><br>`
