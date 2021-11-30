@@ -245,7 +245,6 @@ input#rate-2:checked ~ label {
 /*--------------------------------------------------------------------------------------------------------------*/
 /* Start My Profile*/
 body{
-  margin-top:20px;
   color: #1a202c;
   text-align: left;
 }
