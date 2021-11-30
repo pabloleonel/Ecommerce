@@ -185,5 +185,5 @@ function showComments() { // funcion para mostrar los comentarios realizados.
       </div><br>`
   }
 
-  document.getElementById('showComments').innerHTML += text;
+  document.getElementById('showComments').innerHTML = text;
 }
