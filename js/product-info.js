@@ -104,7 +104,7 @@ function prodShow() { // funcion para mostrar tanto los datos del prod, como el 
 function saveMessage() { //funcion para guardar comentarios nuevos.
   let menssageText = document.getElementById('menssage').value; //Obtengo el elemento textArea
 
-  if (menssageText != '') { //Si el texto no esta vacio...
+  if (menssageText != '') { //Si el text no esta vacio...
 
     let messageReg = { //Creo un objeto con el mensaje y la fecha
       fechaHora: new Date(), //fecha actual new Date
@@ -114,6 +114,7 @@ function saveMessage() { //funcion para guardar comentarios nuevos.
     };
 
     arrayComentarios.push(messageReg); //Agregar al array el mensaje
+
     showComments();
   }
 
@@ -165,7 +166,7 @@ function showComments() { // funcion para mostrar los comentarios realizados.
   }
 
   // si estan chequeadas las almaceno en otro for, y en una variable saveStar para luego utilizarla cuando se imprime el comentario.
-  saveStar = 0;
+  saveStar = "";
   for (let i = 0; i < 5; i++) {
     if (i >= scoreSelect) {
       saveStar += `<span class="fa fa-star"></span>`
@@ -178,7 +179,7 @@ function showComments() { // funcion para mostrar los comentarios realizados.
   for (let i = arrayComentarios.length - 1; i >= 0; i--) {
     let mensajeAux = arrayComentarios[i];
 
-    // agrego el texto al div que cree en el html, por encima de los otros comentarios ya realizados del json.
+    // agrego el text al div que cree en el html, por encima de los otros comentarios ya realizados del json.
     text +=
       `<div class="comment-card container"><h4>${mensajeAux.usuario} ${saveStar}</h4>
       <br><p>${mensajeAux.mensaje}</p><p class="text-right">${mensajeAux.fechaHora.toLocaleDateString()}</p></p>
